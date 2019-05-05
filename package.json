@@ -1,0 +1,11 @@
+{
+    "name": "fem_web_socket_service",
+    "version": "1.0.0",
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "dependencies": {
+        "socket.io": "^2.1.1"
+    }
+}
