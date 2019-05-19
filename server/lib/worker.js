@@ -12,12 +12,12 @@ function task(socket, data){
                 sizeX: 100,
                 sizeY: 100,
                 sizeZ: 100,
-                xAxisFEMCount: 3,
-                yAxisFEMCount: 3,
-                zAxisFEMCount: 3,
+                xAxisFEMCount: 8,
+                yAxisFEMCount: 8,
+                zAxisFEMCount: 8,
                 puasson: 0.3,
                 jung: 1,
-                pressure: -0.1
+                pressure: -0.4
             })
         ]
     );
@@ -25,7 +25,7 @@ function task(socket, data){
     femProcess.stdout.on('data', (data) => {
         console.log(data.toString());
 
-        if (data.toString() == 'Generated start.txt') {
+        if (data.toString().indexOf('Generated start.txt') != -1) {
             fs.readFile('./start.txt', 'utf8', (err, data) => {
                 if (!err) {
                     socket.emit('start.txt', data);
@@ -35,7 +35,7 @@ function task(socket, data){
             });
         }
 
-        if (data.toString() == 'Generated points.txt') {
+        if (data.toString().indexOf('Generated points.txt') != -1) {
             fs.readFile('./points.txt', 'utf8', (err, data) => {
                 if (!err) {
                     socket.emit('points.txt', data);
