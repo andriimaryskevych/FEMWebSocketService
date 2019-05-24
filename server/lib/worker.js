@@ -13,8 +13,8 @@ function task(socket, data){
                 sizeY: 100,
                 sizeZ: 100,
                 xAxisFEMCount: 5,
-                yAxisFEMCount: 30,
-                zAxisFEMCount: 30,
+                yAxisFEMCount: 5,
+                zAxisFEMCount: 5,
                 puasson: 0.3,
                 jung: 1,
                 pressure: -0.4

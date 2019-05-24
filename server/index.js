@@ -1,6 +1,8 @@
 const io = require('socket.io')();
 const worker = require('./lib/worker');
 
+const PORT = 4000;
+
 io.on('connection', (socket) => {
     console.log('User connected');
 
@@ -27,5 +29,5 @@ io.on('connection', (socket) => {
     });
 });
 
-io.listen(3000);
-console.log('listening on port', 3000);
+io.listen(PORT);
+console.log('listening on port', PORT);
