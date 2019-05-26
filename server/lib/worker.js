@@ -2,11 +2,13 @@ const { spawn } = require('child_process');
 const path = require('path');
 const fs = require('fs');
 
+const FEM_DLL = path.resolve(__dirname, '../../../', 'FEM/FEM/bin/Debug/netcoreapp2.0/FEM.dll');
+
 function task(socket, params){
     var femProcess = spawn(
         'dotnet',
         [
-            path.resolve(__dirname, '../../../', 'FEM/FEM/bin/Debug/netcoreapp2.0/FEM.dll'),
+            FEM_DLL,
             ...params
         ]
     );
