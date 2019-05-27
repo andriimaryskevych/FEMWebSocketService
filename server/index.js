@@ -16,7 +16,14 @@ io.on('connection', (socket) => {
 
             const params = [
                 '--json',
-                data,
+                JSON.stringify(Object.assign(
+                    JSON.parse(data),
+                    {
+                        puasson: 0.3,
+                        jung: 1,
+                        pressure: 0.3
+                    }
+                )),
                 '-m'
             ];
 
