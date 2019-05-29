@@ -23,9 +23,9 @@ io.on('connection', (socket) => {
                         pressure: 0.3,
                         load: [
                             {
-                                fe: 999,
+                                fe: 26,
                                 part: 4,
-                                pressure: -0.3
+                                pressure: -0.4
                             }
                         ]
                     }
