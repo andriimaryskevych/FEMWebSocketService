@@ -19,12 +19,18 @@ io.on('connection', (socket) => {
                 JSON.stringify(Object.assign(
                     JSON.parse(data),
                     {
-                        puasson: 0.3,
                         jung: 1,
-                        pressure: 0.3
+                        pressure: 0.3,
+                        load: [
+                            {
+                                fe: 999,
+                                part: 4,
+                                pressure: -0.3
+                            }
+                        ]
                     }
                 )),
-                '-m'
+                // '-m'
             ];
 
             worker(socket, params);
