@@ -20,42 +20,17 @@ io.on('connection', (socket) => {
                     JSON.parse(data),
                     {
                         jung: 1,
-                        pressure: 0.3,
+                        puasson: 0.3,
                         load: [
                             {
                                 fe: 26,
                                 part: 5,
-                                pressure: -0.1
-                            },
-                            {
-                                fe: 25,
-                                part: 5,
-                                pressure: -0.1
-                            },
-                            {
-                                fe: 24,
-                                part: 5,
-                                pressure: -0.1
-                            },
-                            {
-                                fe: 23,
-                                part: 5,
-                                pressure: -0.1
-                            },
-                            {
-                                fe: 22,
-                                part: 5,
-                                pressure: -0.1
-                            },
-                            {
-                                fe: 21,
-                                part: 5,
-                                pressure: -0.1
+                                pressure: -0.4
                             }
                         ]
                     }
                 )),
-                // '-m'
+                '-m'
             ];
 
             worker(socket, params);
