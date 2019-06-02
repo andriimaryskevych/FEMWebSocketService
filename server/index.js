@@ -24,8 +24,33 @@ io.on('connection', (socket) => {
                         load: [
                             {
                                 fe: 26,
-                                part: 4,
-                                pressure: -0.4
+                                part: 5,
+                                pressure: -0.1
+                            },
+                            {
+                                fe: 25,
+                                part: 5,
+                                pressure: -0.1
+                            },
+                            {
+                                fe: 24,
+                                part: 5,
+                                pressure: -0.1
+                            },
+                            {
+                                fe: 23,
+                                part: 5,
+                                pressure: -0.1
+                            },
+                            {
+                                fe: 22,
+                                part: 5,
+                                pressure: -0.1
+                            },
+                            {
+                                fe: 21,
+                                part: 5,
+                                pressure: -0.1
                             }
                         ]
                     }
