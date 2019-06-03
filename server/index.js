@@ -16,20 +16,7 @@ io.on('connection', (socket) => {
 
             const params = [
                 '--json',
-                JSON.stringify(Object.assign(
-                    JSON.parse(data),
-                    {
-                        jung: 1,
-                        puasson: 0.3,
-                        load: [
-                            {
-                                fe: 26,
-                                part: 5,
-                                pressure: -0.4
-                            }
-                        ]
-                    }
-                )),
+                data,
                 '-m'
             ];
 
@@ -39,7 +26,7 @@ io.on('connection', (socket) => {
 
     socket.on('solve', function(data) {
         if (data) {
-            console.log('Got mesh creation request', data);
+            console.log('Got solve request', data);
 
             const params = [
                 '--json',
