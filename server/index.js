@@ -20,7 +20,7 @@ io.on('connection', (socket) => {
                 '-m'
             ];
 
-            worker(socket, params);
+            worker(socket, params, 'mesh');
         }
     });
 
@@ -33,7 +33,7 @@ io.on('connection', (socket) => {
                 data
             ];
 
-            worker(socket, params);
+            worker(socket, params, 'solve');
         }
     });
 });

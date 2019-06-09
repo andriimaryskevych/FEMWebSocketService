@@ -4,7 +4,7 @@ const fs = require('fs');
 
 const FEM_DLL = path.resolve(__dirname, '../../../', 'FEM/FEM/bin/Debug/netcoreapp2.0/FEM.dll');
 
-function task(socket, params){
+function task(socket, params, type){
     var femProcess = spawn(
         'dotnet',
         [
@@ -16,14 +16,16 @@ function task(socket, params){
     femProcess.stdout.on('data', (data) => {
         console.log(data.toString());
 
-        if (data.toString().indexOf('start.txt') != -1) {
-            fs.readFile('./start.txt', 'utf8', (err, data) => {
-                if (!err) {
-                    socket.emit('start.txt', data);
-                } else {
-                    console.log('Error reading file start.txt');
-                }
-            });
+        if (type !== 'solve') {
+            if (data.toString().indexOf('start.txt') != -1) {
+                fs.readFile('./start.txt', 'utf8', (err, data) => {
+                    if (!err) {
+                        socket.emit('start.txt', data);
+                    } else {
+                        console.log('Error reading file start.txt');
+                    }
+                });
+            }
         }
 
         if (data.toString().indexOf('points.txt') != -1) {
