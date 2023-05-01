@@ -6,6 +6,6 @@
     "license": "ISC",
     "description": "",
     "dependencies": {
-        "socket.io": "^2.1.1"
+        "socket.io": "^2.5.0"
     }
 }
